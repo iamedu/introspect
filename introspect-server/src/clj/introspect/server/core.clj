@@ -3,12 +3,21 @@
         compojure.core)
   (:require [clojure.tools.logging :as log]
             [clojure.tools.cli :refer (cli)]
+            [clojure.java.io :as io]
             [compojure.route :as route]
+            [cemerick.friend :as friend]
+            (cemerick.friend  [credentials :as creds])
+            [introspect.server.schema :as schema]
             [introspect.server.util :as util]))
 
-(defroutes app
-  (GET "/"  [] "<h1>Hello World</h1>")
-  (route/not-found "<h1>Page not found</h1>"))
+(defonce sessions (atom {}))
+
+(defroutes app-routes
+  (GET "/" []
+       (io/resource "public/index.html"))
+  (route/resources "/")
+  (route/not-found 
+    "public/404.html"))
 
 (defn -main [& args]
   (let [[options args banner] (cli args
@@ -16,4 +25,5 @@
                                    ["-d" "--database" "Database url" :parse-fn util/parse-db])
         {:keys [port database]} options]
     (log/info "Starting server on port" port "database" (:db database))
-    (run-server app {:port port})))
+    (schema/setup-database database)
+    (run-server app-routes {:port port})))

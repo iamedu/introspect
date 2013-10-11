@@ -2,8 +2,8 @@
 
 (defn parse-db [url]
   (let [db-regex #"postgres://(\w+):(\w+)@([A-Za-z0-9\.\-]+):(\d+)/(\w+)"
-        [_ username password host port db] (re-matches db-regex url)]
-    {:username username
+        [_ user password host port db] (re-matches db-regex url)]
+    {:user user
      :password password
      :host host
      :port port
