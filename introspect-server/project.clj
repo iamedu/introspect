@@ -9,9 +9,12 @@
                  [shoreleave/shoreleave-remote "0.3.0"]
                  [shoreleave/shoreleave-pubsub "0.3.0"]
                  ;; Clojure
+                 [ring/ring-devel "1.2.0"]
+                 [ring/ring-core "1.2.0"]
                  [org.clojure/core.cache "0.6.3"]
                  [org.clojure/tools.logging "0.2.6"]
                  [org.clojure/tools.cli "0.2.4"]
+                 [org.clojure/tools.nrepl "0.2.3"]
                  [io.netty/netty-all "4.0.10.Final"]
                  [http-kit "2.1.12"]
                  [lib-noir "0.7.0"]

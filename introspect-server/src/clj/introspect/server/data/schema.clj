@@ -1,4 +1,4 @@
-(ns introspect.server.schema
+(ns introspect.server.data.schema
   (:use korma.db
         korma.core)
   (:require [clojure.tools.logging :as log]))
