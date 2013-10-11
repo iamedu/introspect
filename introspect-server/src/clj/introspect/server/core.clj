@@ -17,7 +17,7 @@
        (io/resource "public/index.html"))
   (route/resources "/")
   (route/not-found 
-    "public/404.html"))
+    (io/resource "public/404.html")))
 
 (defn -main [& args]
   (let [[options args banner] (cli args

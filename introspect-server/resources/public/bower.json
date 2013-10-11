@@ -1,0 +1,27 @@
+{
+  "name": "introspect",
+  "version": "0.0.0",
+  "homepage": "https://github.com/iamedu/introspect",
+  "authors": [
+    "Eduardo Díaz <iamedu@gmail.com>"
+    ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~1.10",
+    "angular": "~1.2",
+    "angular-route": "~1.2",
+    "angular-sanitize": "~1.2",
+    "angular-cookies": "~1.2",
+    "ngUpload": "~0.3.15",
+    "bootstrap": "~3",
+    "jStorage": "~0.4.4",
+    "codemirror": "~3.16.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
