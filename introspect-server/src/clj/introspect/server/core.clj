@@ -16,6 +16,7 @@
             [ring.middleware.anti-forgery :as forgery]
             [cemerick.friend :as friend]
             (cemerick.friend  [credentials :as creds])
+            [introspect.server.routes.auth :refer (auth-routes)]
             [introspect.server.request :as rq]
             [introspect.server.security.workflow :as wf]
             [introspect.server.security.csrf :as csrf]
@@ -28,6 +29,7 @@
 (defroutes app-routes
   (GET "/" []
        (io/resource "public/index.html"))
+  (context "/api/v1/auth" [] auth-routes)
   (route/resources "/")
   (route/not-found 
     (io/resource "public/404.html")))
