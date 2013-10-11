@@ -11,6 +11,7 @@
                  ;; Clojure
                  [org.clojure/core.cache "0.6.3"]
                  [org.clojure/tools.logging "0.2.6"]
+                 [org.clojure/tools.cli "0.2.4"]
                  [io.netty/netty-all "4.0.10.Final"]
                  [http-kit "2.1.12"]
                  [lib-noir "0.7.0"]
